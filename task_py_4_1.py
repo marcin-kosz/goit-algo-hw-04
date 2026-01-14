@@ -11,14 +11,13 @@ def total_salary(path):
                 if not clean_line:   
                     continue
                 parts = clean_line.split(',')
-                salary = int(parts[1])
+                salary = float(parts[1])
                 salaries_list.append(salary)
         
         total_salaries = sum(salaries_list)
         average_salary = sum(salaries_list) / len(salaries_list)
         
-        print("Загальна сума заробітної плати:", total_salaries)
-        print("Середня заробітна плата:", average_salary)
+        return total_salaries, average_salary
 
     except FileNotFoundError: 
         print("File not found, check if the path is correct")
